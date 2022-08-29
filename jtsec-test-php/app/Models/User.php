@@ -18,7 +18,8 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'proj_rol',
+        'act_rol',
         'email',
         'password',
     ];
@@ -41,4 +42,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //Relación de uno a muchos, nos mostrará todas las incidencias del usuario.
+    public function incidences()
+    {
+        return $this->hasMany('App\Models\Incidence');
+    }
 }
