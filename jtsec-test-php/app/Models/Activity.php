@@ -11,6 +11,10 @@ class Activity extends Model
 
     protected $table = 'activities';
 
+    protected $fillable = [
+        'name'
+    ];
+
     //Relación de uno a muchos, nos mostrará todas las incidencias de la actividad.
     public function incidences()
     {
